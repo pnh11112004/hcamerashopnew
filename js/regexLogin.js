@@ -39,6 +39,26 @@ $(document).ready(function() {
         event.preventDefault(); 
       }
     });
-  
+
+    function logionNew() {
+      $("#btnlogin").click(function() {
+        var txtusername = $("#txtUser").val();
+        var txtpassword = $("#txtPass").val();
+    
+        const user = JSON.parse(localStorage.getItem(txtusername));
+        if (user && user.username === txtusername && user.password === txtpassword) {
+          alert("Logged in successfully");
+          window.location.href = "index.html";
+        } else {
+          alert("Login failed");
+        }
+      });
+    }
+    
+    
+    logionNew();
+
     });
+
+
   

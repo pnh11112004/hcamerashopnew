@@ -70,6 +70,26 @@ $(document).ready(function() {
         event.preventDefault(); 
       }
     });
-  
+    
+    function regesterNew() {
+      $("#btnRegester").click(function() {
+        var txtusername = $("#txtUser").val();
+        var txtpassword = $("#txtPass").val();
+    
+        const user = {
+          username: txtusername,
+          password: txtpassword,
+        };
+    
+        let json = JSON.stringify(user);
+        localStorage.setItem(txtusername, json);
+        alert("Registered successfully");
+        window.location.href = "login.html";
+      });
+    }
+    
+    
+    regesterNew();
+
     });
   
